@@ -13,7 +13,7 @@ def on_message(client, userdata, msg):
     print("Recieved topic:", msg.payload.decode())
     client.disconnect()
     
-client = mqtt.Client()
+client = mqtt.Client("sub")
 client.connect("localhost",1883,60)
 
 client.on_connect = on_connect
